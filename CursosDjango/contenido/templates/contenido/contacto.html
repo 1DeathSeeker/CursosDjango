@@ -1,6 +1,6 @@
-<a href="/">Raiz></a>
-<a href="/cursos">Cursos></a>
-<a href="/contacto">Contactanos</a>
+{% extends "contenido/encabezado.html"%}
+{%block titulo%}Contacto{% endblock %}
+{% block contenido%}
 
 <h2>Información</h2>
 <p>Nombre: <input type="text" name="nombre"></p>
@@ -14,3 +14,4 @@
 <p><textarea cols="30" rows="10"></textarea></p>
 <p><input type="Button" name="enviar" value="Enviar"/></p>
 
+{%endblock%}
