@@ -1,12 +1,16 @@
 {% extends "contenido/encabezado.html"%}
 {%block titulo%}Cursos{% endblock %}
+{%block imagen%}
+    {%load static%}
+    {%static 'contenido/images/cursos.png'%}
+{%endblock%}
 {%block encabezado%}
-Cursos <span>:D</span>
+Cursos 
 {%endblock%}
 {% block contenido%}
-<h1>Cursos disponibles:</h1>
-<p>curso 1</p>
-<p>curso 2</p>
-<p>curso 3</p>
+<h2>Cursos disponibles:</h2>
+<a href="#">Curso 1</a><br>
+<a href="#">Curso 2</a><br>
+<a href="#">Curso 3</a>
 
 {%endblock%}

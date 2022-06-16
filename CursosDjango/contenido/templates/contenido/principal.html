@@ -1,9 +1,13 @@
 {% extends "contenido/encabezado.html"%}
 {%block titulo%}Principal{% endblock %}
+{%block imagen%}
+    {%load static%}
+    {%static 'contenido/images/home.png'%}
+{%endblock%}
 {%block encabezado%}
-Principal <span>:D</span>
+Home 
 {%endblock%}
 {% block contenido%}
 <h1>Hello humans</h1>
-<span>Proyecto CursosDjango</span>
+<span>Proyecto: CursosDjango</span>
 {%endblock%}

@@ -1,11 +1,15 @@
 {% extends "contenido/encabezado.html"%}
 {%block titulo%}Contacto{% endblock %}
+{%block imagen%}
+    {%load static%}
+    {%static 'contenido/images/contacto.png'%}
+{%endblock%}
 {%block encabezado%}
-Contacto <span>:D</span>
+Contacto 
 {%endblock%}
 {% block contenido%}
 
-<h1>Información</h1>
+<h2>Información</h2>
 <p>Nombre: <input type="text" name="nombre"></p>
 <p>Correo: <input type="email" id="email"></p>
 <select name="Cursos" id="cursos">
