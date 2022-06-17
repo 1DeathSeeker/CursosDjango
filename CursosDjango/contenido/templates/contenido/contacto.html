@@ -4,12 +4,19 @@
     {%load static%}
     {%static 'contenido/images/contacto.png'%}
 {%endblock%}
-{%block encabezado%}
+{%block titulopagina%}
 Contacto 
 {%endblock%}
+{%block Encabezdo%}
+<!--Encabezdo -->
+<div class="page-header">
+  <div class="page-title">
+    <h2>Información</h2>
+  </div>
+</div>
+<!-- /Encabezado-->
+{%endblock%}
 {% block contenido%}
-
-<h2>Información</h2>
 <p>Nombre: <input type="text" name="nombre"></p>
 <p>Correo: <input type="email" id="email"></p>
 <select name="Cursos" id="cursos">
@@ -20,6 +27,4 @@ Contacto
 <p>Comentarios:</p>
 <p><textarea cols="30" rows="10"></textarea></p>
 <button class="button">Enviar</button>
-
-
 {%endblock%}

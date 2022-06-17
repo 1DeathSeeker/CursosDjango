@@ -1,39 +1,57 @@
 <html lang="es">
-<head>
-<title>{%block titulo%}{% endblock %}</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-{%load static%}
-<link href="{% static 'contenido/css/main.css'%}" rel="stylesheet" >
-<link href="{% static 'contenido/css/noscript.css'%}" rel="stylesheet">
-
-</head>
-<body class="is-preload">
+  <head>
+    <title>{%block titulo%}{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    {%load static%}
+    <link href="{% static 'contenido/css/main.css'%}" rel="stylesheet" />
+    <link href="{% static 'contenido/css/noscript.css'%}" rel="stylesheet" />
+  </head>
+  <body class="is-preload">
     <!-- Sidebar -->
-     <section id="sidebar">
-        <div class="inner">
-            <nav>
-                <ul>
-                    <li><h1><a href="#"><img src="{%block imagen%}{%endblock%}"></a></h1></li>
-                    <li><h1>{% block encabezado %}{% endblock %}</h1></li>
-                    <li><a href="{%url 'Principal'%}">Home</a></li>
-                    <li><a href="{%url 'Cursos'%}">Cursos</a></li>
-                    <li><a href="{%url 'Contacto'%}">Contactanos</a></li>
-                </ul>
-            </nav>
-        </div>
+    <section id="sidebar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li>
+              <h1>
+                <a href="#"><img src="{%block imagen%}{%endblock%}" /></a>
+              </h1>
+            </li>
+            <li><h1>{% block titulopagina %}{% endblock %}</h1></li>
+            <li><a href="{%url 'Principal'%}">Home</a></li>
+            <li><a href="{%url 'Cursos'%}">Cursos</a></li>
+            <li><a href="{%url 'Contacto'%}">Contactanos</a></li>
+          </ul>
+        </nav>
+      </div>
     </section>
     <div id="wrapper">
-        <!-- Intro -->
-            <section id="intro" class="wrapper style1 fullscreen fade-up">
-                <div class="inner">
-                    <!-- CONTENIDO -->
-                        {% block contenido %} <!--Template Tag-->
-                            <!--block sirve para indicar que colocaremos un bloque de
+      <!-- Intro -->
+      <section id="intro" class="wrapper style1 fullscreen fade-up">
+        <div class="inner">
+          <!-- CONTENIDO -->
+          {%block Encabezdo%}{%endblock%}
+          <!--Barra de navegación-->
+          <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+              <a href="{%url 'Principal'%}">
+                {%if request.path == '/' %} Principal {%else%}
+                Principal{{request.path}} {%endif%}
+              </a>
+            </ul>
+          </div>
+          <!--Barra de navegación-->
+          {% block contenido %}
+          <!--Template Tag-->
+          <!--block sirve para indicar que colocaremos un bloque de
                             contenido a través de nuestra variable content -->
-                        {% endblock %}        
-                </div>
-            </section>
+          {% endblock %}
+        </div>
+      </section>
     </div>
-</body>
+  </body>
 </html>

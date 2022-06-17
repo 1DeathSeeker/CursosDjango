@@ -4,13 +4,20 @@
     {%load static%}
     {%static 'contenido/images/cursos.png'%}
 {%endblock%}
-{%block encabezado%}
+{%block titulopagina%}
 Cursos 
 {%endblock%}
+{%block Encabezdo%}
+<!--Encabezdo -->
+<div class="page-header">
+  <div class="page-title">
+    <h2>Cursos disponibles:</h2>
+  </div>
+</div>
+<!-- /Encabezado-->
+{%endblock%}
 {% block contenido%}
-<h2>Cursos disponibles:</h2>
 <a href="#">Curso 1</a><br>
 <a href="#">Curso 2</a><br>
 <a href="#">Curso 3</a>
-
 {%endblock%}
