@@ -7,6 +7,7 @@ class Cursos(models.Model): #Define la estructura de nuestra tabla
     descripcion = models.TextField(verbose_name="Descripción del Curso") #Texto largo
     activo = models.BooleanField(verbose_name="Estatus del Curso") #Booleano
     duracion = models.PositiveSmallIntegerField(verbose_name="Duración del Curso") #Int pequeño
+    imagen = models.ImageField(null=True,upload_to="fotos",verbose_name="Fotografía")
     created = models.DateField(auto_now_add=True) 
     updated = models.DateField(auto_now_add=True) 
 

@@ -1,0 +1,38 @@
+{% extends "contenido/encabezado.html"%} {%block titulo%}Cursos{% endblock %}
+{%block imagen%} {%load static%} {%static 'contenido/images/cursos.png'%}
+{%endblock%} {%block titulopagina%} Cursos {%endblock%} {%block Encabezdo%}
+<!--Encabezdo -->
+<div class="page-header">
+  <div class="page-title">
+    <h2>Cursos disponibles:</h2>
+  </div>
+</div>
+<!-- /Encabezado-->
+{%endblock%} {% block contenido%}
+<!-- Tabla de cursos -->
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Foto</th>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Estatus</th>
+      <th>Duración Horas</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for curso in cursos %}
+    <tr>
+      <td class="text-center">
+        <img src="{{curso.imagen.url}}" alt="" class="img-media" />
+      </td>
+      <td class="text-semibold">{{curso.idcurso}}</td>
+      <td class="muted">{{curso.nombre}}</td>
+      <td class="muted">{{curso.activo}}</td>
+      <td class="muted">{{curso.duracion}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<!-- /Tabla de cursos -->
+{%endblock%}
