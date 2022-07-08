@@ -17,14 +17,16 @@ Contacto
 <!-- /Encabezado-->
 {%endblock%}
 {% block contenido%}
+<form
+  class="form-horizontal"
+  action="{%url 'guardarComentarios'%}"
+  method="POST"
+  role="form"
+>
+  {%csrf_token%}
 <p>Nombre: <input type="text" name="nombre"></p>
-<p>Correo: <input type="email" id="email"></p>
-<select name="Cursos" id="cursos">
-<option value="curso1">curso 1</option>
-<option value="curso2">curso 2</option>
-<option value="curso3">curso 3</option>
-</select>
 <p>Comentarios:</p>
-<p><textarea cols="30" rows="10"></textarea></p>
+<p><textarea cols="10" name ="comentario" rows="3"></textarea></p>
 <button class="button">Enviar</button>
 {%endblock%}
+</form>

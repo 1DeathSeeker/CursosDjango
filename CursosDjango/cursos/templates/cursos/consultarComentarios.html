@@ -1,0 +1,40 @@
+{% extends "contenido/encabezado.html"%}
+{%block titulo%}ConsultaComentario{% endblock %}
+{%block imagen%}
+    {%load static%}
+{%endblock%}
+{%block titulopagina%}
+ConsultaComentario 
+{%endblock%}
+{%block Encabezdo%}
+
+<div class="page-header">
+    <div class="page-title">
+      <h3>Comentarios <small>Consulta de comentarios</small></h3>
+    </div>
+  </div>
+  <!-- /Encabezado-->
+  {%endblock%} {% block contenido%}
+  <!-- Tabla de Alumnos -->
+  <table name= "comentarios" class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Mensaje</th>
+        <th class="text-center">Editar</th>
+        <th class="text-center">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for comentario in comentarios %}
+      <tr>
+        <td class="text-semibold">{{comentario.nombre}}</td>
+        <td class="muted">{{comentario.comentario}}</td>
+        <td class="text-center"><a href="{%url 'EditarCom' comentario.idcomentario%}">Editar</a></td>
+        <td class="text-center"><a href="{%url 'eliminarCom' comentario.idcomentario%}">Eliminar</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <!-- /Tabla de alumnos -->
+  {%endblock%}

@@ -23,7 +23,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.principal, name="Principal"),
     path('cursos/',views_cursos.cursos, name="Cursos"),
-    path('contacto/',views.contacto, name="Contacto"),
+    path('contacto',views_cursos.cursosComentario,name="Contacto"),
+    path('comentarios/',views_cursos.comentarios, name ="consultarComentarios"),
+    path('guardarComentarios/',views_cursos.guardarComentario, name ="guardarComentarios"),
+    path('eliminarComentario/<int:idcomentario>/',views_cursos.eliminarComentarioContacto,name ="eliminarCom"),
+    path('editarComentario/<int:idcomentario>/',views_cursos.editarComentarioContacto,name ="EditarCom"),
+    path('eliminarCurso/<int:idcurso>/',views_cursos.eliminarCurso,name ="eliminarCurso"),
+    path('editarCurso/<int:idcurso>/',views_cursos.editarCurso,name ="editarCurso"),
+
 ]
 
 if settings.DEBUG:

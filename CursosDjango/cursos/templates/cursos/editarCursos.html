@@ -1,0 +1,64 @@
+{% extends "contenido/encabezado.html"%}
+{%block titulo%}EditarCurso{% endblock %}
+{%block imagen%}
+    {%load static%}
+    {%static 'contenido/images/contacto.png'%}
+{%endblock%}
+{%block titulopagina%}
+EditarCurso 
+{%endblock%}
+{%block Encabezdo%}
+<div class="page-header">
+    <div class="page-title">
+      <h3>Editar Cursos <small>Editar los Cursos</small></h3>
+    </div>
+  </div>
+  <!-- /Encabezado-->
+  {%endblock%} {% block contenido%}
+  
+  <form
+    class="form-horizontal"
+    action="{% url 'editarCurso' curso.idcurso%}"
+    method="POST"
+    role="form"
+  >
+    {%csrf_token%}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label text-right">Nombre:</label>
+          <div class="col-sm-10">
+            <textarea name="nombre" cols="11" rows="1" class="form-control">{{curso.nombre}}
+    </textarea
+            >
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label text-right">Duración:</label>
+            <div class="col-sm-10">
+              <textarea name="duracion" cols="10" rows="2" class="form-control">{{curso.duracion}}
+          </textarea>
+            </div>
+          </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label text-right">Activo:</label>
+          <div class="col-sm-10">
+            <textarea name="activo" cols="10" rows="2" class="form-control">{{curso.activo}}
+        </textarea>
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label text-right">Descripcion:</label>
+            <div class="col-sm-10">
+              <textarea name="descripcion" cols="10" rows="2" class="form-control">{{curso.descripcion}}
+          </textarea>
+            </div>
+          </div>
+        <div class="form-actions text-right">
+          <br>
+          <input type="submit" value="Guardar" class="btn btn-primary" />
+        </div>
+      </div>
+    </div>
+  </form>
+  {%endblock%}

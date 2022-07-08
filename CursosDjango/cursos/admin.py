@@ -1,4 +1,5 @@
 from django.contrib import admin
+from cursos.models import Comentarios
 from cursos.models import Cursos
 from cursos.models import Actividad
 
@@ -21,3 +22,10 @@ class AdministrarActividades(admin.ModelAdmin):
 
 admin.site.register(Actividad,AdministrarActividades)
 
+class AdministrarComentarios(admin.ModelAdmin):
+    list_display = ('idcomentario', 'nombre')
+    search_fields = ('idcomentario', 'comentario')
+    date_hierarchy = 'created'
+    readonly_fields = ('created','idcomentario')
+
+admin.site.register(Comentarios,AdministrarComentarios)

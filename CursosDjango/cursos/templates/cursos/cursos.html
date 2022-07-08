@@ -18,18 +18,23 @@
       <th>Nombre</th>
       <th>Estatus</th>
       <th>Duración Horas</th>
+      <th>Descripción</th>
+      <th>Acción</th>
     </tr>
   </thead>
   <tbody>
     {% for curso in cursos %}
     <tr>
       <td class="text-center">
-        <img src="{{curso.imagen.url}}" alt="" class="img-media" />
+        <img src="{{curso.imagen.url}}" width="50" height="50"class="img-media" />
       </td>
       <td class="text-semibold">{{curso.idcurso}}</td>
-      <td class="muted">{{curso.nombre}}</td>
-      <td class="muted">{{curso.activo}}</td>
-      <td class="muted">{{curso.duracion}}</td>
+      <td class="text-center">{{curso.nombre}}</td>
+      <td class="text-center">{{curso.activo}}</td>
+      <td class="text-center">{{curso.duracion}}</td>
+      <td class="text-center">{{curso.descripcion}}</td>
+      <td class="text-center"><a href="{%url 'editarCurso' curso.idcurso%}">Editar</a></td>
+      <td class="text-center"><a href="{%url 'eliminarCurso' curso.idcurso%}">Eliminar</a></td>
     </tr>
     {% endfor %}
   </tbody>
