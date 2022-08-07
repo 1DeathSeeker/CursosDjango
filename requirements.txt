@@ -11,4 +11,8 @@ pip==22.0.4
 pycparser==2.21
 setuptools==58.1.0
 sqlparse==0.4.2
+<<<<<<< HEAD
 tzdata==2022.1
+=======
+tzdata ==2022.1 
+>>>>>>> 82508854b8a718e23f5c3829fe38601d222332d0
